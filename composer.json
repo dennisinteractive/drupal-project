@@ -31,6 +31,19 @@
             "_comment": "The PhingDrushTask module does not currently have a D8 release and is not available on https://packages.drupal.org/8. See https://www.drupal.org/node/2817131.",
             "type": "vcs",
             "url": "git@github.com:pfrenssen/phingdrushtask.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dennisdigital/drupal-project-scripts",
+                "version": "0.1",
+                "type": "drupal-script",
+                "source": {
+                    "url": "git@github.com:dennisinteractive/drupal-project-scripts.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
@@ -58,7 +71,8 @@
         "pfrenssen/phpcs-pre-push": "1.0",
         "phing/phing": "~2.10",
         "phpunit/phpunit": "~4.8",
-        "symfony/css-selector": "~2.8"
+        "symfony/css-selector": "~2.8",
+        "dennisdigital/drupal-project-scripts": "~0.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -96,7 +110,8 @@
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+            "drush/contrib/{$name}": ["type:drupal-drush"],
+            "scripts/composer/{$name}": ["type:drupal-script"]
         }
     }
 }
