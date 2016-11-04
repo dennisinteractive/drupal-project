@@ -38,7 +38,7 @@ for your setup.
 After that you can create the project:
 
 ```
-git clone https://github.com/pfrenssen/drupal-project.git some-dir
+git clone https://github.com/dennisdigital/drupal-project.git some-dir
 cd some-dir
 composer install
 ```
