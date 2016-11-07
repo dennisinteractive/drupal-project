@@ -3,12 +3,7 @@
     "description": "Project template for Drupal 8 projects with Composer, Phing and Behat",
     "type": "project",
     "license": "GPL-2.0+",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
+
     "repositories": [
         {
             "type": "composer",
@@ -31,42 +26,9 @@
             "_comment": "The PhingDrushTask module does not currently have a D8 release and is not available on https://packages.drupal.org/8. See https://www.drupal.org/node/2817131.",
             "type": "vcs",
             "url": "git@github.com:pfrenssen/phingdrushtask.git"
-        },
-        {
-            "_comment": "Use a separate repo to store scripts that can be deployed to all sites.",
-            "type": "package",
-            "package": {
-                "name": "dennisdigital/drupal-project-scripts",
-                "version": "dev-master",
-                "type": "drupal-script",
-                "source": {
-                    "url": "git@github.com:dennisinteractive/drupal-project-scripts.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "require": {
-                    "oomphinc/composer-installers-extender": "~1.0"
-                }
-            }
-        },
-        {
-            "_comment": "Common stuff that will be used on all sites sites.",
-            "type": "package",
-            "package": {
-                "name": "dennisdigital/drupal-project-tests",
-                "version": "dev-master",
-                "type": "behat-tests",
-                "source": {
-                    "url": "git@github.com:dennisinteractive/drupal-project-tests.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "require": {
-                    "oomphinc/composer-installers-extender": "~1.0"
-                }
-            }
         }
     ],
+
     "require": {
         "composer/composer": "~1.0",
         "composer/installers": "^1.0.20",
@@ -76,7 +38,8 @@
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
         "php": ">=5.5.9",
-        "symfony/css-selector": "~2.8"
+        "symfony/css-selector": "~2.8",
+        "dennisdigital/dennis_profile" : "@dev",
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -93,8 +56,6 @@
         "pfrenssen/phpcs-pre-push": "1.0",
         "phing/phing": "~2.10",
         "phpunit/phpunit": "~4.8",
-        "dennisdigital/drupal-project-scripts": "dev-master",
-        "dennisdigital/drupal-project-tests": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -126,7 +87,7 @@
         ]
     },
     "extra": {
-        "installer-types": ["drupal-script", "behat-tests"],
+        "installer-types": ["drupal-script"],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
@@ -135,7 +96,6 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"],
             "scripts/composer": ["type:drupal-script"],
-            "tests/features": ["type:behat-tests"]
         }
     }
 }
