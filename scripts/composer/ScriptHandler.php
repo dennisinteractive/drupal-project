@@ -78,11 +78,14 @@ EOF;
       $event->getIO()->write("[INFO] Created sites/default/files directory with chmod 0755");
     }
 
-    shell_exec(sprintf('cd %s; git init', $root));
-    $event->getIO()->write("[Done] Git initialized");
+    $command = sprintf('cd %s; git init', $root);
+    $event->getIO()->write($command);
 
-    $event->getIO()->write("[Info] Edit the composer.json and add/remove anything you need.");
-    $event->getIO()->write("[Info] The next thing to do is to configure your repo and push the code. $ git remote add origin repo-url");
+    shell_exec($command);
+    $event->getIO()->write("[DONE] Git initialized");
+
+    $event->getIO()->write("[INFO] Edit the composer.json and add/remove anything you need.");
+    $event->getIO()->write("[INFO] The next thing to do is to configure your repo and push the code. $ git remote add origin repo-url");
 
   }
 
