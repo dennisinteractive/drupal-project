@@ -60,14 +60,14 @@ EOF;
 
       // Change permissions.
       $fs->chmod($settings_php, 0640);
-      $event->getIO()->write("Create a sites/default/settings.php file with chmod 0640");
+      $event->getIO()->write("[INFO] Created sites/default/settings.php file with chmod 0640");
     }
 
     // Prepare the services file for installation
     if (!$fs->exists($root . '/sites/default/services.yml') and $fs->exists($root . '/sites/default/default.services.yml')) {
       $fs->copy($root . '/sites/default/default.services.yml', $root . '/sites/default/services.yml');
       $fs->chmod($root . '/sites/default/services.yml', 0640);
-      $event->getIO()->write("Create a sites/default/services.yml file with chmod 0640");
+      $event->getIO()->write("[INFO] Created sites/default/services.yml file with chmod 0640");
     }
 
     // Create the files directory with chmod 0755
@@ -75,8 +75,14 @@ EOF;
       $oldmask = umask(0);
       $fs->mkdir($root . '/sites/default/files', 0755);
       umask($oldmask);
-      $event->getIO()->write("Create a sites/default/files directory with chmod 0755");
+      $event->getIO()->write("[INFO] Created sites/default/files directory with chmod 0755");
     }
+
+    shell_exec('ls');
+    shell_exec('pwd');
+    shell_exec(sprintf('git init'));
+    $event->getIO()->write("[Done] Git initialized. Now its time to add your repo remote and commit.");
+
   }
 
   /**
