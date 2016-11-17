@@ -56,8 +56,9 @@
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
 
-        "_comment_installers":"Once you have the site built, you can remove the install scripts below",
+        "_comment_installers":"Once you have the site built, you can remove the ScriptHandler scripts below",
         "pre-install-cmd": [
+            "@composer drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "pre-update-cmd": [
