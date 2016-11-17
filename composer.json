@@ -9,6 +9,11 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:dennisinteractive/dennis_profile.git",
+            "no-api": true
         }
     ],
 

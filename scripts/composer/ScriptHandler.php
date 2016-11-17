@@ -80,7 +80,6 @@ EOF;
 
     $command = sprintf('cd %s; cd ..; git init', $root);
     $event->getIO()->write($command);
-
     shell_exec($command);
     $event->getIO()->write("[DONE] Git initialized");
 
