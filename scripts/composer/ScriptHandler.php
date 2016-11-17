@@ -78,8 +78,7 @@ EOF;
       $event->getIO()->write("[INFO] Created sites/default/files directory with chmod 0755");
     }
 
-    $event->getIO()->write("[INFO] Initializing git");
-    $output = shell_exec('git init');
+    $output = shell_exec('rm -rf .git; git init; git add .');
     $event->getIO()->write($output);
 
     $event->getIO()->write("[INFO] Edit the composer.json and add/remove anything you need.");
