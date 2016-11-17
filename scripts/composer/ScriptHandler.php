@@ -78,9 +78,6 @@ EOF;
       $event->getIO()->write("[INFO] Created sites/default/files directory with chmod 0755");
     }
 
-    $output = shell_exec('rm -rf .git; git init; git add .');
-    $event->getIO()->write($output);
-
     $event->getIO()->write("[INFO] Edit the composer.json and add/remove anything you need.");
     $event->getIO()->write("[INFO] The next thing to do is to configure your repo and push the code. $ git remote add origin repo-url");
 

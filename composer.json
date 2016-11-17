@@ -65,7 +65,8 @@
         ],
         "post-install-cmd": [
             "@composer drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "git init; git add ."
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
