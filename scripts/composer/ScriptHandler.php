@@ -80,6 +80,7 @@ EOF;
 
     $event->getIO()->write("[INFO] Edit the composer.json and add/remove anything you need.");
     $event->getIO()->write("[INFO] The next thing to do is to configure your repo and push the code. $ git remote add origin repo-url");
+    $event->getIO()->write("[INFO] Remember to commit your sites/default/settings.php");
 
   }
 
