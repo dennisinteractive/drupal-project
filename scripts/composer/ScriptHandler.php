@@ -35,6 +35,10 @@ class ScriptHandler {
       }
     }
 
+    // Initialize config folder.
+    $fs->mkdir(getcwd() . '/config');
+    $fs->mkdir(getcwd() . '/config/install');
+
     // Prepare the settings file for installation
     $settings_php = $root . '/sites/default/settings.php';
     if (!$fs->exists($settings_php) and $fs->exists($root . '/sites/default/default.settings.php')) {
