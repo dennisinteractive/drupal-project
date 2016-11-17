@@ -38,6 +38,7 @@ class ScriptHandler {
     // Initialize config folder.
     $fs->mkdir(getcwd() . '/config');
     $fs->mkdir(getcwd() . '/config/install');
+    $fs->mkdir(getcwd() . '/config/sync');
 
     // Prepare the settings file for installation
     $settings_php = $root . '/sites/default/settings.php';
