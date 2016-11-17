@@ -11,8 +11,9 @@
             "url": "https://packages.drupal.org/8"
         },
         {
-            "type": "composer",
-            "url": "https://packagist.org"
+            "type": "vcs",
+            "url": "git@github.com:dennisinteractive/dennis_profile.git",
+            "no-api": true
         }
     ],
 
@@ -22,7 +23,7 @@
         "cweagans/composer-patches": "~1.5.0",
         "drush/drush": "~9.0",
         "php": ">=5.5.9",
-        "dennisdigital/dennis_profile" : "8.x-dev"
+        "dennisinteractive/dennis_profile" : "8.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
