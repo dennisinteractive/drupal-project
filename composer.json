@@ -3,16 +3,13 @@
     "description": "Project template for Drupal 8 projects with Composer, Phing and Behat",
     "type": "project",
     "license": "GPL-2.0+",
-
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "composer",
-            "url": "https://packagist.org"
-        },
+        }
     ],
 
     "require": {
@@ -32,19 +29,15 @@
         "drupal/config_update": "1.*@dev",
         "drupal/devel": "1.*@dev",
         "drupal/drupal-extension": "~3.0",
-        "drupal/phingdrushtask": "dev-7.x-2.x",
         "jcalderonzumba/gastonjs": "^1.1@dev",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsStream": "~1.2",
-        "pfrenssen/phpcs-pre-push": "1.0",
         "phing/phing": "~2.10",
         "phpunit/phpunit": "~4.8"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Drupal\\DrupalProject\\": "tests/src",
@@ -56,6 +49,8 @@
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+
+        "_comment_installers":"Once you have the site built, you can remove the install scripts below",
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
@@ -78,6 +73,7 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
+
         "_comment_patches": "Temporarily enabling patches on chained composer.json until config_installer is on core",
         "patches": {
             "enable-patching" : true
