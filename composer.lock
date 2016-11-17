@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "632814c12643635bac2d0ffc2a6b7e87",
-    "content-hash": "8148442b4021915838587e0de8668512",
+    "hash": "dd11c20368a6936af3c5de70814832c1",
+    "content-hash": "e19124c9cc42c468671734ba327fb889",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -295,7 +295,7 @@
             "version": "8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dennisinteractive/dennis_profile.git",
+                "url": "git@github.com:dennisinteractive/dennis_profile.git",
                 "reference": "fe0001eef0020fc6bff14bceaee2cc84cb051d23"
             },
             "dist": {
@@ -320,7 +320,6 @@
                     }
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
