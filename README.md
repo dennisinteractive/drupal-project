@@ -55,7 +55,7 @@ project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
 
 ```
-composer global create-project dennisdigital/dev_scripts:dev-master
+composer create-project dennisdigital/drupal-project:8.x-dev /some-dir --stability dev --no-interaction
 ```
 
 ## What does the template do?
