@@ -78,7 +78,7 @@ EOF;
       $event->getIO()->write("[INFO] Created sites/default/files directory with chmod 0755");
     }
 
-    $command = sprintf('cd %s; git init', $root);
+    $command = sprintf('cd %s; cd ..; git init', $root);
     $event->getIO()->write($command);
 
     shell_exec($command);
