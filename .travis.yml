@@ -41,7 +41,7 @@ install:
   - echo -e "drupal.base_url = http://localhost:8888\n" > build.properties.local
 
   # Build the project.
-  - ./vendor/bin/phing build-dev
+  # - ./vendor/bin/phing build-dev
 
   # Install Drupal. This is not needed when doing a coding standards check.
   - test ${TEST} == "PHP_CodeSniffer" || ./vendor/bin/phing install-dev

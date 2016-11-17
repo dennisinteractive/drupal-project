@@ -36,9 +36,30 @@ class ScriptHandler {
     }
 
     // Prepare the settings file for installation
-    if (!$fs->exists($root . '/sites/default/settings.php') and $fs->exists($root . '/sites/default/default.settings.php')) {
-      $fs->copy($root . '/sites/default/default.settings.php', $root . '/sites/default/settings.php');
-      $fs->chmod($root . '/sites/default/settings.php', 0640);
+    $settings_php = $root . '/sites/default/settings.php';
+    if (!$fs->exists($settings_php) and $fs->exists($root . '/sites/default/default.settings.php')) {
+      $fs->copy($root . '/sites/default/default.settings.php', $settings_php);
+
+      // Append includes.
+      $includes = <<<EOF
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+if (file_exists(__DIR__ . '/settings.memcached.php')) {
+  include __DIR__ . '/settings.memcached.php';
+}
+if (file_exists(__DIR__ . '/settings.db.php')) {
+  include __DIR__ . '/settings.db.php';
+}
+if (file_exists(__DIR__ . '/settings.dev.php')) {
+  include __DIR__ . '/settings.dev.php';
+}
+
+EOF;
+      file_put_contents($settings_php, $includes, FILE_APPEND | LOCK_EX);
+
+      // Change permissions.
+      $fs->chmod($settings_php, 0640);
       $event->getIO()->write("Create a sites/default/settings.php file with chmod 0640");
     }
 

@@ -628,16 +628,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dennisinteractive/dennis_profile.git",
-                "reference": "0b664f301399b3c3c7e7da58182e25512e535399"
+                "reference": "fe0001eef0020fc6bff14bceaee2cc84cb051d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dennisinteractive/dennis_profile/zipball/0b664f301399b3c3c7e7da58182e25512e535399",
-                "reference": "0b664f301399b3c3c7e7da58182e25512e535399",
+                "url": "https://api.github.com/repos/dennisinteractive/dennis_profile/zipball/fe0001eef0020fc6bff14bceaee2cc84cb051d23",
+                "reference": "fe0001eef0020fc6bff14bceaee2cc84cb051d23",
                 "shasum": ""
             },
             "require": {
-                "dennisdigital/drupal_project_scripts": "dev-master",
                 "drupal/config_update": "^1.1",
                 "drupal/core": "^8.1.8",
                 "drupal/ctools": "3.0-alpha26",
@@ -658,38 +657,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal Distro Profile",
-            "time": "2016-11-07 12:57:54"
-        },
-        {
-            "name": "dennisdigital/drupal_project_scripts",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dennisinteractive/drupal_project_scripts.git",
-                "reference": "cdbb6409aba1185ab1151cee785cfc6b4ec073c5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dennisinteractive/drupal_project_scripts/zipball/cdbb6409aba1185ab1151cee785cfc6b4ec073c5",
-                "reference": "cdbb6409aba1185ab1151cee785cfc6b4ec073c5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "type": "project",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Custom scripts for Drupal Project template.",
-            "keywords": [
-                "console",
-                "development",
-                "drupal",
-                "symfony"
-            ],
-            "time": "2016-11-17 11:29:11"
+            "time": "2016-11-17 11:59:13"
         },
         {
             "name": "dflydev/dot-access-configuration",
