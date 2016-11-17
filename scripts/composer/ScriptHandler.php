@@ -81,7 +81,9 @@ EOF;
     shell_exec('ls');
     shell_exec('pwd');
     shell_exec(sprintf('git init'));
-    $event->getIO()->write("[Done] Git initialized. Now its time to add your repo remote and commit.");
+    $event->getIO()->write("[Done] Git initialized");
+    $event->getIO()->write("[Info] Edit the composer.json and add/remove anything you need.");
+    $event->getIO()->write("[Info] Now its time to add your repo remote and commit. $ git remote add origin repo-url");
 
   }
 
