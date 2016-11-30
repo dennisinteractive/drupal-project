@@ -9,7 +9,7 @@
  - -printer="\Drupal\Tests\Listeners\HtmlOutputPrinter" to use it (note there
  should be no spaces between the hyphens).
 -->
-<phpunit bootstrap="core/tests/bootstrap.php" colors="true"
+<phpunit bootstrap="web/core/tests/bootstrap.php" colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true"
@@ -29,6 +29,9 @@
     <env name="BROWSERTEST_OUTPUT_FILE" value=""/>
   </php>
   <testsuites>
+    <testsuite name="tests">
+      <directory>tests</directory>
+    </testsuite>
   </testsuites>
   <listeners>
     <listener class="\Drupal\Tests\Listeners\DrupalStandardsListener">
