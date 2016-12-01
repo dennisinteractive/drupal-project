@@ -22,7 +22,7 @@
     <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
     <env name="SIMPLETEST_BASE_URL" value=""/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
-    <env name="SIMPLETEST_DB" value=""/>
+    <!--<env name="SIMPLETEST_DB" value="mysql://root:@localhost/new_site"/>-->
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
     <env name="BROWSERTEST_OUTPUT_DIRECTORY" value=""/>
     <!-- Example BROWSERTEST_OUTPUT_FILE value: /path/to/webroot/sites/simpletest/browser_output/outputfile.txt -->
@@ -38,6 +38,7 @@
     </testsuite>
   </testsuites>
   <listeners>
+    <listener class="DbSetupListener" file="tests/phpunit/listeners/dbsetuplistener.php"></listener>
     <listener class="\Drupal\Tests\Listeners\DrupalStandardsListener">
     </listener>
   </listeners>
