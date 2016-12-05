@@ -9,7 +9,7 @@
  - -printer="\Drupal\Tests\Listeners\HtmlOutputPrinter" to use it (note there
  should be no spaces between the hyphens).
 -->
-<phpunit bootstrap="core/tests/bootstrap.php" colors="true"
+<phpunit bootstrap="web/core/tests/bootstrap.php" colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true"
@@ -22,15 +22,23 @@
     <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
     <env name="SIMPLETEST_BASE_URL" value=""/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
-    <env name="SIMPLETEST_DB" value=""/>
+    <!--<env name="SIMPLETEST_DB" value="mysql://root:@localhost/new_site"/>-->
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
     <env name="BROWSERTEST_OUTPUT_DIRECTORY" value=""/>
     <!-- Example BROWSERTEST_OUTPUT_FILE value: /path/to/webroot/sites/simpletest/browser_output/outputfile.txt -->
     <env name="BROWSERTEST_OUTPUT_FILE" value=""/>
   </php>
   <testsuites>
+    <testsuite name="tests">
+      <directory>tests</directory>
+    </testsuite>
+    <testsuite name="custom_modules">
+      <directory>web/modules</directory>
+      <exclude>web/modules/contrib</exclude>
+    </testsuite>
   </testsuites>
   <listeners>
+    <listener class="DbSetupListener" file="tests/phpunit/listeners/dbsetuplistener.php"></listener>
     <listener class="\Drupal\Tests\Listeners\DrupalStandardsListener">
     </listener>
   </listeners>
