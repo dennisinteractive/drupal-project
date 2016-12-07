@@ -10,6 +10,7 @@ drush/contrib
 drush/README.md
 web/core
 web/modules/contrib
+web/modules/custom
 web/themes/contrib
 web/profiles/contrib
 web/.htaccess
@@ -28,7 +29,7 @@ web/sites/example*.php
 build.properties.local
 phpcs.xml
 tests/behat.yml
-web/phpunit.xml
+phpunit.xml
 web/sites/default/services.yml
 web/sites/default/default.*.yml
 web/sites/default/default.*.php
