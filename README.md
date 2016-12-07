@@ -211,6 +211,13 @@ $ cd tests/
 $ ./behat features/authentication.feature
 ```
 
+If you want to execute one test of a group of tests, use tags. Use ~ to exclude a tag.
+
+```
+$ cd tests/
+$ ./behat --tags="@api&&@user"
+```
+
 If you want to run the tests from a different folder, then provide the path to
 `tests/behat.yml` with the `-c` option:
 
@@ -230,7 +237,7 @@ background.
 
 #### Chrome
 
-Set the following build property in your `build.properties` file:
+Set the following build property in your `behat.yml.dist` file:
 
 ```
 # The browser to use for testing, either 'firefox' or 'chrome'.
@@ -240,7 +247,7 @@ behat.browser_name = chrome
 Make sure to regenerate your Behat configuration file after making this change:
 
 ```
-$ ./vendor/bin/phing setup-behat
+$ drupal site:behat:setup site_name
 ```
 
 You can install Selenium and Chrome / Chromium locally on your system and start
@@ -268,16 +275,17 @@ For more information on running a containerized Selenium, see
 
 #### Firefox
 
-Set the following build property in your `build.properties` file:
+Set the following build property in your `behat.yml.dist` file:
 
 ```
 # The browser to use for testing, either 'firefox' or 'chrome'.
 behat.browser_name = firefox
 ```
+
 Make sure to regenerate your Behat configuration file after making this change:
 
 ```
-$ ./vendor/bin/phing setup-behat
+$ drupal site:behat:setup site_name
 ```
 
 You can install Selenium and Firefox locally on your system and start Selenium
@@ -315,7 +323,7 @@ PhantomJS is a headless browser based on Webkit, which is the same engine which
 Chrome uses. You can install it from your package manager, or [download
 it](http://phantomjs.org/download.html).
 
-Declare that you are using a Chrome-alike browser in your `build.properties`
+Declare that you are using a Chrome-alike browser in your `behat.yml.dist`
 file:
 
 
@@ -327,7 +335,7 @@ behat.browser_name = chrome
 Make sure to regenerate your Behat configuration file after making this change:
 
 ```
-$ ./vendor/bin/phing setup-behat
+$ drupal site:behat:setup site_name
 ```
 
 Now you can run PhantomJS in WebDriver mode, and run your tests. All your tests
