@@ -39,3 +39,7 @@ web/sites/default/settings.*.php
 
 # System folders
 .DS_Store
+
+# Ignore files generated using templates
+behat.yml
+
