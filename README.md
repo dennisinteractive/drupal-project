@@ -348,11 +348,10 @@ $ phantomjs --webdriver=4444
 
 ## Running PHPUnit tests
 
-Run the tests from the `web` folder:
+Run the tests from the root:
 
 ```
-$ cd web/
-$ ../vendor/bin/phpunit
+$ ./vendor/bin/phpunit
 ```
 
 By default all tests in the folders `web/modules/custom`, `web/profiles` and

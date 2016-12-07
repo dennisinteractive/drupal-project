@@ -6,11 +6,6 @@ case "$1" in
         ./vendor/bin/phpcs
         exit $?
         ;;
-    PHPUnit)
-        cd $TRAVIS_BUILD_DIR/web
-        ../vendor/bin/phpunit
-        exit $?
-        ;;
     Behat)
         cd $TRAVIS_BUILD_DIR/tests
         ./behat
