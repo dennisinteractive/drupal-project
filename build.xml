@@ -206,6 +206,11 @@
     </target>
 
     <target
+        name="build-dev"		
+        description="Build a development environment."		
+        depends="install-composer-dependencies, setup-php-codesniffer" />		
+
+   <target
         name="setup-dev"
         description="Set up 'development mode' for an installed website."
         depends="enable-dev-settings, enable-dev-modules" />
