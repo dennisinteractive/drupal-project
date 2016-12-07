@@ -21,14 +21,11 @@
 
     <includepath classpath="src/Phing" />
 
-    <!-- <echo msg="Loading Drush task." /> -->
-    <!-- <taskdef name="drush" classname="\Drush\Task" /> -->
+    <!--<echo msg="Loading Drush task." />-->
+    <!--<taskdef name="drush" classname="\Drush\Task" />-->
 
     <echo msg="Loading PHP Codesniffer Configuration task." />
     <taskdef name="phpcodesnifferconfiguration" classname="\DrupalProject\Phing\PhpCodeSnifferConfigurationTask" />
-
-    <echo msg="Loading PHPUnit Configuration task." />
-    <taskdef name="phpunitconfiguration" classname="\DrupalProject\Phing\PhpUnitConfigurationTask" />
 
     <!-- Make the settings folder writeable so that the installer can copy settings.php. -->
     <target name="writable-settings-folder">
@@ -122,31 +119,6 @@
         <echo message="${behat.yml.content}" file="${behat.yml.path}" />
     </target>
 
-    <!-- Set up PHPUnit. -->
-    <target name="setup-phpunit" description="Generate the configuration file for PHPUnit.">
-        <if>
-            <available file="${phpunit.config}" type="file" property="phpunit.config.available" />
-            <then>
-                <echo message="Deleting existing PHPUnit configuration file." />
-                <delete file="${phpunit.config}" failonerror="false" />
-            </then>
-        </if>
-        <phpunitconfiguration
-                configFile="${phpunit.config}"
-                distFile="${phpunit.dist}"
-                files="${phpunit.files}"
-                directories="${phpunit.directories}"
-                testsuiteName="${phpunit.testsuite.name}"
-                baseUrl="${phpunit.base_url}"
-                dbUrl="${phpunit.db_url}"
-                browsertestOutputDirectory="${phpunit.browsertest_output_dir}"
-                browsertestOutputFile="${phpunit.browsertest_output_file}"
-        />
-        <!-- Create the directory and file for browsertest output. -->
-        <mkdir dir="${phpunit.browsertest_output_dir}" />
-        <touch file="${phpunit.browsertest_output_file}" />
-    </target>
-
     <!-- Create demo users. -->
     <target name="create-demo-users" description="Create demo users.">
         <foreach list="${drupal.demo.users}" param="drupal.demo.user" target="create-demo-user" delimiter="," />
@@ -236,9 +208,9 @@
     <target
         name="build-dev"
         description="Build a development environment."
-        depends="install-composer-dependencies, setup-behat, setup-php-codesniffer, setup-phpunit" />
+        depends="install-composer-dependencies, setup-php-codesniffer" />
 
-    <target
+   <target
         name="setup-dev"
         description="Set up 'development mode' for an installed website."
         depends="enable-dev-settings, enable-dev-modules" />

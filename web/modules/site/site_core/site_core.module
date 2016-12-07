@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Configuration Update Base module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function site_core_help($route_name, RouteMatchInterface $route_match) {
+
+}

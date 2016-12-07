@@ -135,40 +135,6 @@ phpcs.prepush.source = ${project.basedir}/vendor/pfrenssen/phpcs-pre-push/pre-pu
 phpcs.prepush.destination = ${project.basedir}/.git/hooks/pre-push
 
 
-# PHPUnit configuration
-# ---------------------
-
-# The path to the configuration file template.
-phpunit.dist = ${project.basedir}/phpunit.xml.dist
-
-# The path to the generated configuration file. This is typically inside the web
-# root.
-phpunit.config = ${website.drupal.dir}/phpunit.xml
-
-# The name to give to the test suite of the project.
-phpunit.testsuite.name = ${project.name}
-
-# Comma-separated list of directories containing tests to execute. These are
-# relative to the Drupal root.
-phpunit.directories = ./modules/custom,./profiles,./themes/custom
-
-# Comma-separated list of test files to execute. These are relative to the
-# Drupal root.
-phpunit.files =
-
-# The base URL to use in functional tests.
-phpunit.base_url = ${drupal.base_url}
-
-# The database URL to use in kernel tests and functional tests.
-phpunit.db_url = ${drupal.db.url}
-
-# The path to the directory where HTML output from browsertests is stored.
-phpunit.browsertest_output_dir = ${website.sites.dir}/simpletest/browser_output
-
-# The path to the file that lists HTML output from browsertests.
-phpunit.browsertest_output_file = ${phpunit.browsertest_output_dir}/outputfile.txt
-
-
 # Development options
 # -------------------
 
