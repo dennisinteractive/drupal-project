@@ -105,20 +105,6 @@
         <delete file="${phpcs.prepush.destination}" failonerror="false" />
     </target>
 
-    <!-- Set up Behat. -->
-    <target name="setup-behat" description="Generate the configuration file for Behat.">
-        <if>
-            <available file="${behat.yml.path}" type="file" property="behat.yml.available" />
-            <then>
-                <echo message="Deleting existing behat.yml configuration file" />
-                <delete file="${behat.yml.path}" failonerror="false" />
-            </then>
-        </if>
-        <echo message="Creating behat.yml configuration file" />
-        <loadfile property="behat.yml.content" file="${behat.yml.template}" />
-        <echo message="${behat.yml.content}" file="${behat.yml.path}" />
-    </target>
-
     <!-- Create demo users. -->
     <target name="create-demo-users" description="Create demo users.">
         <foreach list="${drupal.demo.users}" param="drupal.demo.user" target="create-demo-user" delimiter="," />

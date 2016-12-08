@@ -11,24 +11,19 @@ default:
         tags: '~@wip'
   extensions:
     Behat\MinkExtension:
-      base-url: '${behat.base_url}'
-      files_path: '${behat.files.path}'
+      base-url: 'http://${host}'
+      files_path: '%paths.base%/features/files/'
       goutte: ~
       javascript_session: 'selenium2'
-      browser_name: '${behat.browser_name}'
-      selenium2:
-        wd_host: '${behat.webdriver_url}'
+      selenium2: ~
     Drupal\DrupalExtension:
       api_driver: 'drupal'
       blackbox: ~
       drupal:
-        drupal_root: '${website.drupal.dir}'
+        drupal_root: '${root}/web'
       selectors:
         message_selector: '.messages'
         error_message_selector: '.messages.messages--error'
         success_message_selector: '.messages.messages--status'
-      subcontexts:
-        paths:
-          - '${behat.subcontexts.path}'
   formatters:
-    ${behat.formatter.name}: ~
+    pretty: true
