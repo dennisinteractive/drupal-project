@@ -81,7 +81,12 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
-
+        "drupal-scaffold": {
+            "excludes": [
+                ".htaccess",
+                "web.config"
+            ]
+        },
         "_comment_patches": "Temporarily enabling patches on chained composer.json until config_installer is on core",
         "patches": {
             "enable-patching" : true

@@ -1,0 +1,39 @@
+# Git normalization
+# @see https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
+# @see https://git-scm.com/docs/git-config#git-config-corewhitespace
+
+# We will assign some macros for simplicity to:
+# - Treat them as text.
+# - Ensure no CRLF line-endings, neither on checkout nor on checkin.
+# - Detect whitespace errors.
+#   - Exposed by default in `git diff --color` on the CLI.
+#   - Validate with `git diff --check`.
+#   - Deny applying with `git apply --whitespace=error-all`.
+#   - Fix automatically with `git apply --whitespace=fix`.
+[attr]usual text eol=lf whitespace=blank-at-eol,-blank-at-eof,tab-in-indent,tabwidth=4
+[attr]unusual text eol=lf whitespace=blank-at-eol,-blank-at-eof,tab-in-indent,tabwidth=2
+
+# Set all text files with defined macro rules
+*.dist     usual
+*.config   usual
+*.inc      usual diff=php
+*.js       usual
+*.json     usual
+*.lock     usual
+*.map      usual
+*.md       usual
+*.php      usual diff=php
+*.po       usual
+*.profile  usual diff=php
+*.script   usual
+*.sh       usual diff=php
+*.sql      usual
+*.txt      usual
+*.xml      usual
+*.yml      unusual
+*.yml.dist unusual
+*.feature  usual
+
+# Set binary files to not diff.
+*.gz       binary
+*.phar     binary
