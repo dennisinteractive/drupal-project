@@ -83,7 +83,6 @@
         },
         "drupal-scaffold": {
             "excludes": [
-                ".htaccess",
                 "web.config"
             ]
         },
