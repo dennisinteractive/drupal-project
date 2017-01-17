@@ -29,9 +29,6 @@
     <env name="BROWSERTEST_OUTPUT_FILE" value=""/>
   </php>
   <testsuites>
-    <testsuite name="tests">
-      <directory>tests</directory>
-    </testsuite>
     <testsuite name="custom_modules">
       <directory>web/modules</directory>
       <exclude>web/modules/contrib</exclude>
