@@ -50,8 +50,8 @@ class ScriptHandler {
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
-if (file_exists(__DIR__ . '/settings.memcached.php')) {
-  include __DIR__ . '/settings.memcached.php';
+if (file_exists(__DIR__ . '/settings.memcache.php')) {
+  include __DIR__ . '/settings.memcache.php';
 }
 if (file_exists(__DIR__ . '/settings.db.php')) {
   include __DIR__ . '/settings.db.php';
