@@ -45,8 +45,11 @@ class ScriptHandler {
     if (!$fs->exists($settings_php) and $fs->exists($root . '/sites/default/default.settings.php')) {
       $fs->copy($root . '/sites/default/default.settings.php', $settings_php);
 
-      // Append includes.
+      // Append settings.
       $includes = <<<EOF
+// Use memcache as backend.
+// $settings['cache']['default'] = 'cache.backend.memcache';
+
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
