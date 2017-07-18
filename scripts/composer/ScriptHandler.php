@@ -48,7 +48,7 @@ class ScriptHandler {
       // Append settings.
       $includes = <<<EOF
 // Use memcache as backend.
-// $settings['cache']['default'] = 'cache.backend.memcache';
+// \$settings['cache']['default'] = 'cache.backend.memcache';
 
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
@@ -62,7 +62,6 @@ if (file_exists(__DIR__ . '/settings.db.php')) {
 if (file_exists(__DIR__ . '/settings.dev.php')) {
   include __DIR__ . '/settings.dev.php';
 }
-
 EOF;
       file_put_contents($settings_php, $includes, FILE_APPEND | LOCK_EX);
 
