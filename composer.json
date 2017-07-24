@@ -19,28 +19,28 @@
     ],
 
     "require": {
-        "composer/installers": "^1.0.20",
+        "composer/installers": "~1.2.0",
         "drupal-composer/drupal-scaffold": "^2.0.1",
-        "cweagans/composer-patches": "~1.5.0",
-        "drush/drush": "~9.0",
+        "cweagans/composer-patches": "~1.6.0",
+        "drush/drush": "~9.0.0",
         "php": ">=5.5.9",
-        "dennisdigital/dennis_profile" : "8.x-dev"
+        "dennisdigital/dennis_profile" : "~1.1.4"
     },
     "require-dev": {
-        "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
+        "behat/mink": "~1.7.0",
+        "behat/mink-goutte-driver": "~1.2.0",
         "behat/mink-selenium2-driver": "dev-master#721cbbaf37f71434f6acb604dc3a17a6a9be0c4c",
-        "squizlabs/php_codesniffer": "2.*",
-        "drupal/coder": "~8.2.7",
+        "squizlabs/php_codesniffer": "~2.8.0",
+        "drupal/coder": "~2.11.0",
         "drupal/config_update": "1.*@dev",
-        "drupal/devel": "1.*@dev",
-        "drupal/drupal-extension": "~3.0",
+        "drupal/devel": "~1.0.0",
+        "drupal/drupal-extension": "~3.2.0",
         "jcalderonzumba/gastonjs": "^1.1@dev",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsStream": "~1.2",
+        "mikey179/vfsStream": "~1.6.0"",
         "phing/phing": "~2.10",
-        "phpunit/phpunit": "~4.8",
-        "drupal/config_inspector": "^1.0"
+        "phpunit/phpunit": ">=4.8.28 <5",
+        "drupal/config_inspector": "~1.0.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -75,7 +75,7 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
+            "web/core": ["drupal/core"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
