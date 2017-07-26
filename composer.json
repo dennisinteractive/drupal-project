@@ -76,7 +76,7 @@
     },
     "extra": {
         "installer-paths": {
-            "web/core": ["drupal/core"],
+            "web/core": ["type:drupal/core"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
