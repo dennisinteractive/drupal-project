@@ -47,6 +47,10 @@ class ScriptHandler {
 
       // Append settings.
       $includes = <<<EOF
+$config_directories = array(
+  CONFIG_SYNC_DIRECTORY => '../config/sync',
+);
+
 // Use memcache as backend.
 // \$settings['cache']['default'] = 'cache.backend.memcache';
 
