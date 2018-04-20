@@ -56,7 +56,14 @@ all files not excluded by the .gitignore file.
 
 ```
 composer create-project dennisdigital/drupal-project:dev-thunder_8.2.x /some-dir --stability dev --no-interaction
+cd /some-dir
+git init
+git remote add origin [repo-url]
+git checkout -b [branch-name]
+git add .
+git push origin
 ```
+
 
 ## What does the template do?
 
