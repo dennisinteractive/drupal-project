@@ -3,7 +3,6 @@
 bin
 LICENSE
 README.md
-scripts
 vendor
 
 drush/contrib
