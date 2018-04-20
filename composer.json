@@ -1,8 +1,8 @@
 {
-    "name": "dennisdigital/drupal-project",
-    "description": "Project template for Drupal 8 projects with Composer, Phing and Behat",
+    "name": "dennisdigital/thunder-project",
+    "description": "Drupal 8 Sandbox for Thunder projects",
     "type": "project",
-    "license": "GPL-2.0+",
+    "license": "GPL-2.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
@@ -11,36 +11,44 @@
             "url": "https://packages.drupal.org/8"
         },
         {
-            "type": "vcs",
-            "url": "git@github.com:dennisinteractive/dennis_profile.git",
-            "vendor-alias": "dennisdigital",
-            "no-api": true
+            "type": "composer",
+            "url": "https://repo.packagist.com/dennisdigital/"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+             "packagist.org": false
         }
     ],
-
     "require": {
-        "composer/installers": "^1.0.20",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
-        "cweagans/composer-patches": "~1.5.0",
+        "burdamagazinorg/thunder": "~8.2",
+        "composer/installers": "^1.2",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "cweagans/composer-patches": "^1.6",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
         "drush/drush": "~9.0",
-        "php": ">=5.5.9",
-        "dennisdigital/dennis_profile" : "8.x-dev"
+        "drupal/console": "^1.2",
+        "php": ">=5.5.9"
     },
     "require-dev": {
+        "webflo/drupal-core-require-dev": "^8.4",
         "behat/mink": "~1.7",
         "behat/mink-goutte-driver": "~1.2",
         "behat/mink-selenium2-driver": "dev-master#721cbbaf37f71434f6acb604dc3a17a6a9be0c4c",
         "squizlabs/php_codesniffer": "2.*",
         "drupal/coder": "~8.2.7",
-        "drupal/config_update": "1.*@dev",
         "drupal/devel": "1.*@dev",
-        "drupal/drupal-extension": "~3.0",
+        "drupal/drupal-extension": "3.1",
         "jcalderonzumba/gastonjs": "^1.1@dev",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsStream": "~1.2",
-        "phing/phing": "~2.10",
-        "phpunit/phpunit": "~4.8",
-        "drupal/config_inspector": "^1.0"
+        "phpunit/phpunit": ">=4.8.28 <5",
+        "drupal/config_inspector": "~1.0.0",
+        "drupal/config_update": "1.*@dev"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -76,7 +84,10 @@
     "extra": {
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -87,9 +98,9 @@
                 "web.config"
             ]
         },
-        "_comment_patches": "Temporarily enabling patches on chained composer.json until config_installer is on core",
-        "patches": {
-            "enable-patching" : true
-        }
+        "enable-patching": true
+    },
+    "config": {
+        "bin-dir": "bin/"
     }
 }

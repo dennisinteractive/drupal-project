@@ -1,7 +1,0 @@
-name: Site Core
-type: module
-description: "Site Core module for all site related functionality and instalation hooks."
-package: Site
-core: 8.x
-dependencies:
-  - system (>=8.1.0)
