@@ -145,7 +145,7 @@ drush.verbose = yes
 ```
 
 
-## Listing the available build commands
+## Listing the available build commands @TODO update this doc
 
 You can get a list of all the available Phing build commands ("targets") with a
 short description of each target with the following command:
