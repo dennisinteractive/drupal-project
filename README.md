@@ -61,6 +61,7 @@ git init
 git remote add origin [repo-url]
 git checkout -b [branch-name]
 git add .
+git commit -m"Initial commit"
 git push origin
 ```
 
