@@ -12,9 +12,6 @@ which is set up with support for Continuous Integration out of the box.
 
 This fork has the following additions to the original version of drupal-project:
 
-* **Customizable builds**: Different builds for production and development
-  environments are created with [Phing](https://www.phing.info/). These can be
-  fully customized using a set of configuration files.
 * **Behat support**: Behat is included so you can easily test user scenarios.
 * **Preconfigured test suites**: PHPUnit is fully set up for running unit tests
   as well as kernel tests, web tests and javascript tests.
@@ -22,10 +19,6 @@ This fork has the following additions to the original version of drupal-project:
   command, or set it up to scan automatically whenever you `git push`.
 * **Travis CI**: Integrates seamlessly with [Travis CI](https://travis-ci.com/)
   so you can automate your tests right from the start. No setup needed!
-
-If you want to know how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
-the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
 ## Usage
 
@@ -54,6 +47,7 @@ The `composer create-project` command passes ownership of all files to the
 project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
 
+## Creating a new site from template
 ```
 composer create-project dennisdigital/drupal-project:dev-thunder_8.2.x /some-dir --stability dev --no-interaction
 cd /some-dir
@@ -64,7 +58,6 @@ git add .
 git commit -m"Initial commit"
 git push origin
 ```
-
 
 ## What does the template do?
 
