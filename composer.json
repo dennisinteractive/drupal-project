@@ -70,7 +70,11 @@
             "git init; git add ."
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "drupal config:import",
+            "drupal update:execute",
+            "drupal config:export",
+            "git status"
         ]
     },
     "extra": {
